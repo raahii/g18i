@@ -44,6 +44,7 @@ func main() {
 	h := handler.NewHandler(db)
 
 	router := mux.NewRouter()
+	router.StrictSlash(false)
 	router.HandleFunc("/recipes", h.GetRecipes).Methods("GET")
 	router.HandleFunc("/recipes/{id}", h.GetRecipe).Methods("GET")
 	router.HandleFunc("/recipes", h.CreateRecipe).Methods("POST")
