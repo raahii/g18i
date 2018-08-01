@@ -1,7 +1,83 @@
 {
-  "rootPath": "github.com/raahii/gunosy-task",
-  "heroku": {
-    "install" : [ "./..." ],
-    "goVersion": "go1.10"
-  }
+	"comment": "",
+	"heroku": {
+		"goVersion": "go1.10",
+		"install": [
+			"./..."
+		]
+	},
+	"ignore": "test",
+	"package": [
+		{
+			"path": "appengine/cloudsql",
+			"revision": ""
+		},
+		{
+			"checksumSHA1": "b4DmyMT9bicTRVJw1hJXHLhIH+0=",
+			"path": "github.com/go-playground/locales",
+			"revision": "f63010822830b6fe52288ee52d5a1151088ce039",
+			"revisionTime": "2018-03-23T16:04:04Z"
+		},
+		{
+			"checksumSHA1": "JgF260rC9YpWyY5WEljjimWLUXs=",
+			"path": "github.com/go-playground/locales/currency",
+			"revision": "f63010822830b6fe52288ee52d5a1151088ce039",
+			"revisionTime": "2018-03-23T16:04:04Z"
+		},
+		{
+			"checksumSHA1": "7QcjNTtW0Rc/5BPw1MPaQ6YNjso=",
+			"path": "github.com/go-playground/universal-translator",
+			"revision": "71201497bace774495daed26a3874fd339e0b538",
+			"revisionTime": "2017-03-27T19:17:03Z"
+		},
+		{
+			"checksumSHA1": "k9izYoyobR8Upb3Yjsw9htgE/Mk=",
+			"path": "github.com/go-sql-driver/mysql",
+			"revision": "99ff426eb706cffe92ff3d058e168b278cabf7c7",
+			"revisionTime": "2018-07-19T07:19:42Z"
+		},
+		{
+			"checksumSHA1": "g/V4qrXjUGG9B+e3hB+4NAYJ5Gs=",
+			"path": "github.com/gorilla/context",
+			"revision": "08b5f424b9271eedf6f9f0ce86cb9396ed337a42",
+			"revisionTime": "2016-08-17T18:46:32Z"
+		},
+		{
+			"checksumSHA1": "Aw8z8w/d+EFt8XCUYPjzSe0bPrU=",
+			"path": "github.com/gorilla/mux",
+			"revision": "cb4698366aa625048f3b815af6a0dea8aef9280a",
+			"revisionTime": "2018-06-05T21:15:56Z"
+		},
+		{
+			"checksumSHA1": "f7M/c3JpA+2BnvJFLF7n+8GE9E8=",
+			"path": "github.com/jinzhu/gorm",
+			"revision": "409121d9e394922787885b001d148a05e3a42b6c",
+			"revisionTime": "2018-07-26T23:43:49Z"
+		},
+		{
+			"checksumSHA1": "eECxSkwh0WmhLwaxHfkvcLOWS08=",
+			"path": "github.com/jinzhu/gorm/dialects/mysql",
+			"revision": "409121d9e394922787885b001d148a05e3a42b6c",
+			"revisionTime": "2018-07-26T23:43:49Z"
+		},
+		{
+			"checksumSHA1": "4eelJOSLZoDzLuaJvgilOBVNovU=",
+			"path": "github.com/jinzhu/inflection",
+			"revision": "04140366298a54a039076d798123ffa108fff46c",
+			"revisionTime": "2018-03-08T03:36:59Z"
+		},
+		{
+			"checksumSHA1": "LiyXfqOzaeQ8vgYZH3t2hUEdVTw=",
+			"path": "google.golang.org/appengine/cloudsql",
+			"revision": "4216e58b9158e5f1c906f1aca75162a46a2ec88a",
+			"revisionTime": "2018-07-31T16:49:58Z"
+		},
+		{
+			"checksumSHA1": "AbuKUV0gxECkRpjb2fmgo3DZYac=",
+			"path": "gopkg.in/go-playground/validator.v9",
+			"revision": "ab2a8a99087e827c9af87ed6777ba897348fb178",
+			"revisionTime": "2018-07-09T15:35:10Z"
+		}
+	],
+	"rootPath": "github.com/raahii/gunosy-task"
 }
