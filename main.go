@@ -240,7 +240,7 @@ func DeleteRecipe(w http.ResponseWriter, r *http.Request) {
 var db *gorm.DB
 
 func gormConnect() *gorm.DB {
-	DBMS := "mysql"
+	DBMS := os.Getenv("DB_KIND")
 	USER := os.Getenv("DB_USER")
 	PASS := os.Getenv("DB_PASSWORD")
 	PROTOCOL := os.Getenv("DB_PROTOCOL")
@@ -280,5 +280,5 @@ func main() {
 		port = "8000"
 	}
 
-	log.Fatal(http.ListenAndServe(":"+port, nil))
+	log.Fatal(http.ListenAndServe(":"+port, router))
 }

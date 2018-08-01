@@ -1,3 +1,4 @@
+SET sql_mode = '';
 DROP TABLE IF EXISTS recipes;
 
 CREATE TABLE IF NOT EXISTS recipes (
