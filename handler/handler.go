@@ -80,7 +80,8 @@ func (c Handler) CreateRecipe(w http.ResponseWriter, r *http.Request) {
 	body, err := ioutil.ReadAll(r.Body)
 	if err != nil {
 		response := map[string]string{
-			"message": "Recipe creation failed!"}
+			"message": "Recipe creation failed!",
+			"error":   "Parsing POST parameters failed."}
 		json.NewEncoder(w).Encode(response)
 		return
 	}
@@ -90,7 +91,8 @@ func (c Handler) CreateRecipe(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("recipe:", recipe.Title, recipe.Cost)
 	if err != nil {
 		response := map[string]string{
-			"message": "Recipe creation failed!"}
+			"message": "Recipe creation failed!",
+			"error":   "Converting json to entity failed."}
 		json.NewEncoder(w).Encode(response)
 		return
 	}
