@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"github.com/gorilla/mux"
 	"github.com/jinzhu/gorm"
-	. "github.com/raahii/gunosy-task/model"
+	. "github.com/raahii/g18i/model"
 	"gopkg.in/go-playground/validator.v9"
 	"io/ioutil"
 	"net/http"

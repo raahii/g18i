@@ -1,1 +1,1 @@
-web: gunosy-task
+web: g18i
