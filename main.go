@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"errors"
+	"fmt"
 	"github.com/gorilla/mux"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
@@ -178,6 +179,21 @@ func UpdateRecipe(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// validation
+	if err := validate.Struct(recipe); err != nil {
+		var errorFields []string
+		for _, e := range err.(validator.ValidationErrors) {
+			errorFields = append(errorFields, recipeJsonTag(e.Field()))
+		}
+
+		w.WriteHeader(http.StatusUnprocessableEntity)
+		response := map[string]string{
+			"message":  "Recipe creation failed!",
+			"required": strings.Join(errorFields, ", ")}
+		json.NewEncoder(w).Encode(response)
+		return
+	}
+
 	// update
 	if err := db.Save(&recipe).Error; err != nil {
 		w.WriteHeader(http.StatusUnprocessableEntity)
@@ -231,10 +247,13 @@ func gormConnect() *gorm.DB {
 	DBNAME := os.Getenv("DB_NAME")
 	ENABLE_DB_LOG := os.Getenv("ENABLE_DB_LOG") == "1"
 
-	CONNECT := USER + ":" + PASS + "@" + PROTOCOL + "/" + DBNAME + "?parseTime=true"
+	CONNECT := USER + ":" + PASS + "@" + PROTOCOL + "/" + DBNAME
 	db, err := gorm.Open(DBMS, CONNECT)
 	if err != nil {
+		fmt.Println(">> Failed to connect to the database.")
 		panic(err.Error())
+	} else {
+		fmt.Println(">> Connected to the database.")
 	}
 
 	db.LogMode(ENABLE_DB_LOG)
