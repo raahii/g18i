@@ -1,3 +1,7 @@
 {
-	"rootPath": "github.com/raahii/gunosy-task"
+  "rootPath": "github.com/raahii/gunosy-task",
+  "heroku": {
+    "install" : [ "./..." ],
+    "goVersion": "go1.10"
+  }
 }
