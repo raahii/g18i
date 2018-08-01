@@ -275,5 +275,10 @@ func main() {
 
 	validate = validator.New()
 
-	log.Fatal(http.ListenAndServe(":8000", router))
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8000"
+	}
+
+	log.Fatal(http.ListenAndServe(":"+port, nil))
 }
